@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"go-starter-app/internal/models"
+	"go-starter-app/internal/controllers"
 )
 
 func HandleUsers(w http.ResponseWriter, r *http.Request) {
@@ -13,11 +13,7 @@ func HandleUsers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	users := []models.User{
-		{ID: 1, Name: "Alice", Email: "alice@example.com"},
-		{ID: 2, Name: "Bob", Email: "bob@example.com"},
-		{ID: 3, Name: "Charlie", Email: "charlie@example.com"},
-	}
+	users := controllers.ListUsers()
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(users)
