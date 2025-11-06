@@ -10,8 +10,8 @@ The project is divided into core backend services (`services`) and a frontend ap
 | :--- | :--- |
 | `database` | Contains database-related files (e.g., schemas, migrations). |
 | `proto` | Houses Protocol Buffers definitions (`.proto` files) for gRPC communication. |
-| `services` | **Backend services**. |
-| `web` | **Frontend applications**. |
+| `services` | Backend services. |
+| `web` | Frontend applications. |
 | `Makefile` | Utility commands for common tasks (e.g., building, cleaning, running tests). |
 
 ---
@@ -33,7 +33,7 @@ The `services` directory contains various backend implementations, each exposing
 
 ---
 
-## 🌐 Frontend (`/web/astro`)
+## 🌐 Frontend (`/web`)
 
 This directory contains the project for the frontend application(s):
 
@@ -75,4 +75,4 @@ These benchmarks test the performance of the Hono.js service, which requires the
 | **Start Service** | `bun run --cwd services/honojs dev` | Starts the Hono.js service using Bun. |
 | **Run Benchmark** | `bun run --cwd services/honojs test:benchmark` | Executes the benchmark script defined in the `package.json` for the REST endpoint. |
 
-> **Note:** Remember to **stop a running service** before starting the next one if they use the same port, or adjust the port configurations as needed.
+> **Note:** Remember to **stop a running service** after the tests are done.
